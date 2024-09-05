@@ -1,2 +1,135 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import { onMount } from 'svelte';
+	import Icon from './Icon.svelte';
+
+	const config = {
+		discordId: '804066391614423061'
+	};
+
+	let track = {
+		artist: 'mac demarco',
+		song: 'moonlight on the river',
+		id: '2fhOljbX79loRcdl47SFye'
+	};
+	let discordPicture = 'https://media1.tenor.com/m/teHODrCGjRQAAAAd/regretting-thinking.gif';
+
+	function calculateAge() {
+		const birthDate = new Date(1197669600000);
+		const today = new Date();
+
+		let age = today.getFullYear() - birthDate.getFullYear();
+		const monthDifference = today.getMonth() - birthDate.getMonth();
+
+		// adjust the age if the birthday has not occurred yet this year
+		if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+			age--;
+		}
+
+		return age;
+	}
+	// @ts-ignore
+	function handleData(data) {
+		if (!data.listening_to_spotify) return;
+
+		track.artist = data.spotify.artist;
+		track.song = data.spotify.song;
+		track.id = data.spotify.track_id;
+		discordPicture = `https://cdn.discordapp.com/avatars/804066391614423061/${data.discord_user.avatar}.png`;
+	}
+
+	async function getProfileData() {
+		const data = await fetch(`https://api.lanyard.rest/v1/users/${config.discordId}`);
+		return (await data.json()).data;
+	}
+
+	onMount(async () => {
+		const profileData = await getProfileData();
+		handleData(profileData);
+
+		const socket = new WebSocket('wss://api.lanyard.rest/socket');
+		socket.addEventListener('open', () => {
+			socket.send(
+				JSON.stringify({
+					op: 2,
+					d: {
+						subscribe_to_ids: ['804066391614423061']
+					}
+				})
+			);
+		});
+
+		socket.addEventListener('message', (event) => {
+			const jsonData = JSON.parse(event.data);
+			if (jsonData.op === 0 && jsonData.t === 'PRESENCE_UPDATE') {
+				handleData(jsonData.d);
+			}
+		});
+	});
+</script>
+
+<div
+	class="w-fit ml-12 mt-12 mr-12 pb-10 pr-12 bg-gradient-to-br from-ctp-base to-ctp-mantle outline outline-2 outline-ctp-mauve drop-shadow-2xl rounded-xl"
+>
+	<div class="pt-8 pl-8">
+		<!-- user -->
+		<div class="flex">
+			<div>
+				<img class="w-16 aspect-square rounded-xl" src={discordPicture} alt="user's profile" />
+			</div>
+			<div class="flex flex-col pl-4">
+				<div class="flex flex-row">
+					<p class="text-ctp-text text-lg group" id="username">
+						logix<span
+							class="text-ctp-subtext1 text-lg opacity-0 group-hover:opacity-100 transition"
+							>ism</span
+						>
+					</p>
+				</div>
+				<div class="flex flex-row pt-0.5">
+					<Icon name="record" width="16" height="16" class="mt-0.5" />
+					<a href="https://open.spotify.com/track/{track.id}">
+						<p class="text-ctp-subtext1 transition hover:text-ctp-subtext0">
+							&nbsp;{track.song.toLowerCase()}
+						</p>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- about user -->
+		<div class="pt-4">
+			<h2 class="text-xl text-ctp-text font-semibold">about me</h2>
+			<p class="text-base text-ctp-subtext1 tracking-[0.005em] max-w-[30rem]">
+				just some random {calculateAge()} year old ukrainian high-schoolian, with a slight twist of python
+				programming & awkwardness
+			</p>
+		</div>
+
+		<!-- contacts -->
+		<div class="flex flex-col pt-4">
+			<h2 class="text-xl text-ctp-text font-semibold">contact</h2>
+			<div class="flex flex-col pt-2">
+				<div class="flex flex-row space-x-2 items-center">
+					<a href="https://discord.com/users/804066391614423061">
+						<Icon name="discord" width="32" height="32" class="transition hover:opacity-80" />
+					</a>
+					<div class="flex-grow border-t border-dashed border-ctp-mauve opacity-80"></div>
+					<p class="text-ctp-subtext1 transition hover:text-ctp-subtext0">logix.lol</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style lang="postcss">
+	:global(html) {
+		font-family: 'Manjari', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji';
+		height: 100%;
+	}
+
+	:global(body) {
+		@apply bg-gradient-to-br;
+		@apply from-ctp-mantle;
+		@apply to-ctp-crust;
+	}
+</style>
