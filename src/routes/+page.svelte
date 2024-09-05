@@ -68,7 +68,7 @@
 </script>
 
 <div
-	class="w-fit ml-12 mt-12 mr-12 pb-10 pr-12 bg-gradient-to-br from-ctp-base to-ctp-mantle outline outline-2 outline-ctp-mauve drop-shadow-2xl rounded-xl"
+	class="w-fit ml-12 mt-12 mr-12 pb-12 pr-12 bg-gradient-to-br from-ctp-base to-ctp-mantle outline outline-2 outline-ctp-mauve drop-shadow-lg hover:drop-shadow-2xl transition rounded-xl"
 >
 	<div class="pt-8 pl-8">
 		<!-- user -->
