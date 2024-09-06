@@ -1,17 +1,20 @@
 <script>
 	import { onMount } from 'svelte';
+	import { transliterate } from '$lib/cyrlat';
 	import Icon from './Icon.svelte';
 
 	const config = {
 		discordId: '804066391614423061'
 	};
 
+	let firstFetchComplete = false;
 	let track = {
 		artist: 'mac demarco',
 		song: 'moonlight on the river',
 		id: '2fhOljbX79loRcdl47SFye'
 	};
-	let discordPicture = 'https://media1.tenor.com/m/teHODrCGjRQAAAAd/regretting-thinking.gif';
+	let discordPicture =
+		'https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/636e0a6ca814282eca7172c6_icon_clyde_white_RGB.svg';
 
 	function calculateAge() {
 		const birthDate = new Date(1197669600000);
@@ -35,6 +38,8 @@
 		track.song = data.spotify.song;
 		track.id = data.spotify.track_id;
 		discordPicture = `https://cdn.discordapp.com/avatars/804066391614423061/${data.discord_user.avatar}.png`;
+
+		firstFetchComplete = true;
 	}
 
 	async function getProfileData() {
@@ -74,7 +79,15 @@
 		<!-- user -->
 		<div class="flex">
 			<div>
-				<img class="w-16 aspect-square rounded-xl" src={discordPicture} alt="user's profile" />
+				<!-- opacity because the default discord logo is too white -->
+				<img
+					class="w-16 aspect-square rounded-xl transition-all hover:w-24 {firstFetchComplete ===
+					true
+						? 'opacity-100'
+						: 'opacity-80'}"
+					src={discordPicture}
+					alt="user's profile"
+				/>
 			</div>
 			<div class="flex flex-col pl-4">
 				<div class="flex flex-row">
@@ -87,9 +100,14 @@
 				</div>
 				<div class="flex flex-row pt-0.5">
 					<Icon name="record" width="16" height="16" class="mt-0.5" />
+					<!-- <img
+						src="https://emojigraph.org/media/facebook/optical-disk_1f4bf.png"
+						alt="spinny disk"
+						class="mt-1 h-3 aspect-square duration-0 animate-spin-slow"
+					/> -->
 					<a href="https://open.spotify.com/track/{track.id}">
 						<p class="text-ctp-subtext1 transition hover:text-ctp-subtext0">
-							&nbsp;{track.song.toLowerCase()}
+							&nbsp;{transliterate(track.song.toLowerCase())}
 						</p>
 					</a>
 				</div>
@@ -99,17 +117,19 @@
 		<!-- about user -->
 		<div class="pt-4">
 			<h2 class="text-xl text-ctp-text font-semibold">about me</h2>
-			<p class="text-base text-ctp-subtext1 tracking-[0.005em] max-w-[30rem]">
-				just some random {calculateAge()} year old ukrainian high-schoolian, with a slight twist of python
-				programming & awkwardness
-			</p>
+			<div>
+				<p class="text-base text-ctp-subtext1 tracking-[0.005em] max-w-[30rem]">
+					just some random {calculateAge()} year old ukrainian high-schoolian, with a slight twist of
+					python programming & awkwardness
+				</p>
+			</div>
 		</div>
 
 		<!-- contacts -->
 		<div class="flex flex-col pt-4">
 			<h2 class="text-xl text-ctp-text font-semibold">contact</h2>
 			<div class="flex flex-col pt-2">
-				<div class="flex flex-row space-x-2 items-center">
+				<div class="flex flex-row space-x-3 items-center">
 					<a href="https://discord.com/users/804066391614423061">
 						<Icon name="discord" width="32" height="32" class="transition hover:opacity-80" />
 					</a>
