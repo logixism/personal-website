@@ -32,12 +32,13 @@
 	}
 	// @ts-ignore
 	function handleData(data) {
+		discordPicture = `https://cdn.discordapp.com/avatars/804066391614423061/${data.discord_user.avatar}.png`;
+
 		if (!data.listening_to_spotify) return;
 
 		track.artist = data.spotify.artist;
 		track.song = data.spotify.song;
 		track.id = data.spotify.track_id;
-		discordPicture = `https://cdn.discordapp.com/avatars/804066391614423061/${data.discord_user.avatar}.png`;
 
 		firstFetchComplete = true;
 	}
@@ -48,27 +49,7 @@
 	}
 
 	onMount(async () => {
-		const profileData = await getProfileData();
-		handleData(profileData);
-
-		const socket = new WebSocket('wss://api.lanyard.rest/socket');
-		socket.addEventListener('open', () => {
-			socket.send(
-				JSON.stringify({
-					op: 2,
-					d: {
-						subscribe_to_ids: ['804066391614423061']
-					}
-				})
-			);
-		});
-
-		socket.addEventListener('message', (event) => {
-			const jsonData = JSON.parse(event.data);
-			if (jsonData.op === 0 && jsonData.t === 'PRESENCE_UPDATE') {
-				handleData(jsonData.d);
-			}
-		});
+		handleData(await getProfileData());
 	});
 </script>
 
