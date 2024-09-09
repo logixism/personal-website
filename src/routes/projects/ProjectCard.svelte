@@ -6,17 +6,17 @@
 </script>
 
 <div
-	class="bg-gradient-to-br from-ctp-base to-ctp-mantle outline outline-2 outline-ctp-mauve drop-shadow-lg rounded-xl"
+	class="w-fit bg-gradient-to-br from-ctp-base to-ctp-mantle outline outline-2 outline-ctp-mauve drop-shadow-lg rounded-xl"
 >
-	<div class="flex p-4">
+	<div class="flex flex-col md:flex-row p-4">
 		<img
 			src="/va.png"
 			class="object-cover max-w-48 rounded-lg drop-shadow-xl"
 			alt="Value Assistant logo"
 		/>
-		<div class="flex flex-col ml-6 mt-2">
+		<div class="flex flex-col md:ml-6 mt-4 md:mt-2">
 			<h2 class="text-ctp-text font-bold text-xl">{name}</h2>
-			<p class="max-w-[24rem] text-ctp-subtext0 font-medium mt-2">
+			<p class="max-w-[12rem] md:max-w-[24rem] text-ctp-subtext0 font-medium mt-2">
 				{description}
 			</p>
 			<a
