@@ -10,3 +10,9 @@
 	--text-color: #cdd6f4;
 	--subtext-color: #a6adc8;
 }
+
+body {
+	@apply bg-gradient-to-br;
+	@apply from-ctp-mantle;
+	@apply to-ctp-crust;
+}

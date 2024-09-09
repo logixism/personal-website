@@ -1,7 +1,8 @@
 <script>
+	import Icon from './Icon.svelte';
+
 	import { onMount } from 'svelte';
 	import { transliterate } from '$lib/cyrlat';
-	import Icon from './Icon.svelte';
 
 	const config = {
 		discordId: '804066391614423061'
@@ -54,7 +55,7 @@
 </script>
 
 <div
-	class="w-fit ml-12 mt-12 mr-12 pb-12 pr-12 bg-gradient-to-br from-ctp-base to-ctp-mantle outline outline-2 outline-ctp-mauve drop-shadow-lg hover:drop-shadow-2xl transition rounded-xl"
+	class="w-fit ml-12 mt-8 mr-12 pb-12 pr-12 bg-gradient-to-br from-ctp-base to-ctp-mantle outline outline-2 outline-ctp-mauve drop-shadow-lg hover:drop-shadow-2xl transition rounded-xl"
 >
 	<div class="pt-8 pl-8">
 		<!-- user -->
@@ -72,7 +73,7 @@
 			</div>
 			<div class="flex flex-col pl-4">
 				<div class="flex flex-row">
-					<p class="text-ctp-text text-lg group" id="username">
+					<p class="text-ctp-text text-lg font-semibold group" id="username">
 						logix<span
 							class="text-ctp-subtext1 text-lg opacity-0 group-hover:opacity-100 transition"
 							>ism</span
@@ -80,15 +81,10 @@
 					</p>
 				</div>
 				<div class="flex flex-row pt-0.5">
-					<Icon name="record" width="16" height="16" class="mt-0.5" />
-					<!-- <img
-						src="https://emojigraph.org/media/facebook/optical-disk_1f4bf.png"
-						alt="spinny disk"
-						class="mt-1 h-3 aspect-square duration-0 animate-spin-slow"
-					/> -->
-					<a href="https://open.spotify.com/track/{track.id}">
+					<Icon name="record" width="16" height="16" class="mt-1" />
+					<a class="ml-1" href="https://open.spotify.com/track/{track.id}">
 						<p class="text-ctp-subtext1 transition hover:text-ctp-subtext0">
-							&nbsp;{transliterate(track.song.toLowerCase())}
+							{transliterate(track.song.toLowerCase())}
 						</p>
 					</a>
 				</div>
@@ -99,9 +95,9 @@
 		<div class="pt-4">
 			<h2 class="text-xl text-ctp-text font-semibold">about me</h2>
 			<div>
-				<p class="text-base text-ctp-subtext1 tracking-[0.005em] max-w-[30rem]">
+				<p class="text-base text-ctp-subtext1 tracking-[0.005em] max-w-[34rem]">
 					just some random {calculateAge()} year old ukrainian high-schoolian, with a slight twist of
-					python programming & awkwardness
+					python programming & awkwardness.
 				</p>
 			</div>
 		</div>
@@ -124,13 +120,8 @@
 
 <style lang="postcss">
 	:global(html) {
-		font-family: 'Manjari', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji';
+		font-family: 'Jetbrains Mono', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji';
+		font-size: smaller;
 		height: 100%;
-	}
-
-	:global(body) {
-		@apply bg-gradient-to-br;
-		@apply from-ctp-mantle;
-		@apply to-ctp-crust;
 	}
 </style>
