@@ -19,7 +19,7 @@
 
 <Navbar>
 	<NavbarLink text="home" href="/" />
-	<NavbarLink text="projects" href="projects" />
+	<NavbarLink text="projects" href="/projects" />
 </Navbar>
 
 <slot />

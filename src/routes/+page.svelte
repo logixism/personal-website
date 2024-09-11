@@ -55,7 +55,7 @@
 </script>
 
 <div
-	class="w-fit ml-12 mt-8 mr-12 pb-12 pr-12 bg-gradient-to-br from-ctp-base to-ctp-mantle outline outline-2 outline-ctp-mauve drop-shadow-lg hover:drop-shadow-2xl transition rounded-xl"
+	class="w-fit mr-12 pb-12 pr-12 bg-gradient-to-br from-ctp-base to-ctp-mantle outline outline-2 outline-ctp-mauve drop-shadow-lg hover:drop-shadow-2xl transition rounded-xl"
 >
 	<div class="pt-8 pl-8">
 		<!-- user -->
@@ -117,11 +117,3 @@
 		</div>
 	</div>
 </div>
-
-<style lang="postcss">
-	:global(html) {
-		font-family: 'Jetbrains Mono', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji';
-		font-size: smaller;
-		height: 100%;
-	}
-</style>

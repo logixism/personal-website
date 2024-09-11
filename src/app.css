@@ -9,10 +9,21 @@
 
 	--text-color: #cdd6f4;
 	--subtext-color: #a6adc8;
+
+	font-family: 'Jetbrains Mono', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji';
+	font-size: smaller;
 }
 
 body {
 	@apply bg-gradient-to-br;
 	@apply from-ctp-mantle;
 	@apply to-ctp-crust;
+
+	margin-left: 2rem;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	margin-right: 2rem;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: 100%;
 }

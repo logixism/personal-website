@@ -1,3 +1,3 @@
-<div class="flex space-x-6 mt-6 ml-12">
+<div class="flex space-x-6 mb-8">
 	<slot />
 </div>

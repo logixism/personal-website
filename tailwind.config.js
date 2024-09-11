@@ -20,7 +20,10 @@ export default {
 				}
 			},
 			dropShadow: {
-				'glow-ctp-mauve': ['0 0px 8px rgba(203, 166, 247, 0.35)']
+				'glow-ctp-mauve': ['0 0px 8px rgba(203, 166, 247, 0.35)'],
+				'glow-ctp-yellow': ['0px 0px 20px #f9e2af'],
+				'glow-ctp-green': ['0px 0px 20px #a6e3a1'],
+				'glow-ctp-red': ['0px 0px 20px #f38ba8']
 			}
 		}
 	},
