@@ -55,7 +55,7 @@
 </script>
 
 <div
-	class="w-fit mr-12 pb-12 pr-12 bg-gradient-to-br from-ctp-base to-ctp-mantle outline outline-2 outline-ctp-mauve drop-shadow-lg hover:drop-shadow-2xl transition rounded-xl"
+	class="w-fit h-fit pb-12 pr-12 bg-gradient-to-br from-ctp-base to-ctp-mantle outline outline-2 outline-ctp-mauve drop-shadow-lg hover:drop-shadow-2xl transition rounded-xl"
 >
 	<div class="pt-8 pl-8">
 		<!-- user -->
@@ -104,7 +104,7 @@
 
 		<!-- contacts -->
 		<div class="flex flex-col pt-4">
-			<h2 class="text-xl text-ctp-text font-semibold">contact</h2>
+			<h2 class="text-xl text-ctp-text font-semibold">links</h2>
 			<div class="flex flex-col pt-2">
 				<div class="flex flex-row space-x-3 items-center">
 					<a href="https://discord.com/users/804066391614423061">
@@ -112,6 +112,15 @@
 					</a>
 					<div class="flex-grow border-t border-dashed border-ctp-mauve opacity-80"></div>
 					<p class="text-ctp-subtext1 transition hover:text-ctp-subtext0">logix.lol</p>
+				</div>
+			</div>
+			<div class="flex flex-col pt-2">
+				<div class="flex flex-row space-x-3 items-center">
+					<a href="https://github.com/logixism">
+						<Icon name="github" width="32" height="32" class="transition hover:opacity-80" />
+					</a>
+					<div class="flex-grow border-t border-dashed border-ctp-mauve opacity-80"></div>
+					<p class="text-ctp-subtext1 transition hover:text-ctp-subtext0">logixism</p>
 				</div>
 			</div>
 		</div>

@@ -17,12 +17,16 @@
 	});
 </script>
 
-<Navbar>
-	<NavbarLink text="home" href="/" />
-	<NavbarLink text="projects" href="/projects" />
-</Navbar>
+<div class="flex flex-col justify-center items-center min-h-[calc(100vh-8rem)]">
+	<div>
+		<Navbar>
+			<NavbarLink text="home" href="/" />
+			<NavbarLink text="projects" href="/projects" />
+		</Navbar>
 
-<slot />
+		<slot />
+	</div>
+</div>
 
 <style>
 	::view-transition-old(root),
