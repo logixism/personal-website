@@ -105,32 +105,6 @@
 		<div class="pt-4">
 			<h2 class="text-xl text-ctp-text font-semibold pb-4">projects</h2>
 			<div class="flex flex-col space-y-4">
-				<a href="https://github.com/logixism/wlshot" target="_blank">
-					<div class="flex">
-						<img
-							class="h-24 rounded-xl"
-							src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Wayland_Logo.svg/1200px-Wayland_Logo.svg.png"
-							alt="user's profile"
-						/>
-						<div class="flex flex-col pl-4">
-							<p class="text-ctp-text font-semibold" id="username">
-								wlshot <Icon
-									name="link"
-									class="inline-block absolute -translate-y-0.5 translate-x-1"
-									width="2rem"
-									height="2rem"
-								/>
-							</p>
-							<p
-								class="text-ctp-subtext1 text-sm pt-1 tracking-[0.01em] max-w-[26rem]"
-								id="username"
-							>
-								A screenshot tool for wayland that allows for freezing the screen to take a
-								screenshot. At the core, just a wrapper for grim & imagemagick.
-							</p>
-						</div>
-					</div>
-				</a>
 				<a href="https://discord.com/application-directory/1195566389201739817" target="_blank">
 					<div class="flex">
 						<img class="h-24 rounded-full" src="./va.png" alt="user's profile" />
