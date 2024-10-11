@@ -19,10 +19,10 @@
 
 <div class="flex flex-col justify-center items-center min-h-[calc(100vh-8rem)]">
 	<div>
-		<Navbar>
+		<!-- <Navbar>
 			<NavbarLink text="home" href="/" />
 			<NavbarLink text="projects" href="/projects" />
-		</Navbar>
+		</Navbar> -->
 
 		<slot />
 	</div>

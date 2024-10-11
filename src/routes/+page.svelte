@@ -55,7 +55,7 @@
 </script>
 
 <div
-	class="w-fit h-fit pb-12 pr-12 bg-gradient-to-br from-ctp-base to-ctp-mantle outline outline-2 outline-ctp-mauve drop-shadow-lg hover:drop-shadow-2xl transition rounded-xl"
+	class="w-fit h-fit pb-12 pr-12 bg-gradient-to-br from-ctp-base to-ctp-mantle outline outline-2 outline-ctp-mauve drop-shadow-lg hover:drop-shadow-2xl transition rounded-3xl"
 >
 	<div class="pt-8 pl-8">
 		<!-- user -->
@@ -63,8 +63,7 @@
 			<div>
 				<!-- opacity because the default discord logo is too white -->
 				<img
-					class="w-16 aspect-square rounded-xl transition-all hover:w-24 {firstFetchComplete ===
-					true
+					class="h-20 rounded-xl transition-all hover:h-28 {firstFetchComplete === true
 						? 'opacity-100'
 						: 'opacity-80'}"
 					src={discordPicture}
@@ -102,25 +101,82 @@
 			</div>
 		</div>
 
+		<!-- projects -->
+		<div class="pt-4">
+			<h2 class="text-xl text-ctp-text font-semibold pb-4">projects</h2>
+			<div class="flex flex-col space-y-4">
+				<a href="https://github.com/logixism/wlshot" target="_blank">
+					<div class="flex">
+						<img
+							class="h-24 rounded-xl"
+							src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Wayland_Logo.svg/1200px-Wayland_Logo.svg.png"
+							alt="user's profile"
+						/>
+						<div class="flex flex-col pl-4">
+							<p class="text-ctp-text font-semibold" id="username">
+								wlshot <Icon
+									name="link"
+									class="inline-block absolute -translate-y-0.5 translate-x-1"
+									width="2rem"
+									height="2rem"
+								/>
+							</p>
+							<p
+								class="text-ctp-subtext1 text-sm pt-1 tracking-[0.01em] max-w-[26rem]"
+								id="username"
+							>
+								A screenshot tool for wayland that allows for freezing the screen to take a
+								screenshot. At the core, just a wrapper for grim & imagemagick.
+							</p>
+						</div>
+					</div>
+				</a>
+				<a href="https://discord.com/application-directory/1195566389201739817" target="_blank">
+					<div class="flex">
+						<img class="h-24 rounded-full" src="./va.png" alt="user's profile" />
+						<div class="flex flex-col pl-4">
+							<p class="text-ctp-text font-semibold" id="username">
+								Value Assistant <Icon
+									name="link"
+									class="inline-block absolute -translate-y-0.5 translate-x-1"
+									width="2rem"
+									height="2rem"
+								/>
+							</p>
+							<p
+								class="text-ctp-subtext1 text-sm pt-1 tracking-[0.01em] max-w-[26rem]"
+								id="username"
+							>
+								Value Assistant is an innovative bot designed to provide information on item values
+								sourced from a variety of channels.
+							</p>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
 		<!-- contacts -->
 		<div class="flex flex-col pt-4">
 			<h2 class="text-xl text-ctp-text font-semibold">links</h2>
-			<div class="flex flex-col pt-2">
-				<div class="flex flex-row space-x-3 items-center">
-					<a href="https://discord.com/users/804066391614423061">
-						<Icon name="discord" width="32" height="32" class="transition hover:opacity-80" />
-					</a>
-					<div class="flex-grow border-t border-dashed border-ctp-mauve opacity-80"></div>
-					<p class="text-ctp-subtext1 transition hover:text-ctp-subtext0">logix.lol</p>
+			<div>
+				<div class="flex flex-col pt-2">
+					<div class="flex flex-row space-x-3 items-center">
+						<a href="https://discord.com/users/804066391614423061">
+							<Icon name="discord" width="32" height="32" class="transition hover:opacity-80" />
+						</a>
+						<div class="flex-grow border-t border-dashed border-ctp-mauve opacity-80"></div>
+						<p class="text-ctp-subtext1 transition hover:text-ctp-subtext0">logix.lol</p>
+					</div>
 				</div>
-			</div>
-			<div class="flex flex-col pt-2">
-				<div class="flex flex-row space-x-3 items-center">
-					<a href="https://github.com/logixism">
-						<Icon name="github" width="32" height="32" class="transition hover:opacity-80" />
-					</a>
-					<div class="flex-grow border-t border-dashed border-ctp-mauve opacity-80"></div>
-					<p class="text-ctp-subtext1 transition hover:text-ctp-subtext0">logixism</p>
+				<div class="flex flex-col pt-2">
+					<div class="flex flex-row space-x-3 items-center">
+						<a href="https://github.com/logixism">
+							<Icon name="github" width="32" height="32" class="transition hover:opacity-80" />
+						</a>
+						<div class="flex-grow border-t border-dashed border-ctp-mauve opacity-80"></div>
+						<p class="text-ctp-subtext1 transition hover:text-ctp-subtext0">logixism</p>
+					</div>
 				</div>
 			</div>
 		</div>
