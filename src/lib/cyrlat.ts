@@ -31,7 +31,8 @@ const chars: { [cyrillic: string]: string } = {
 	щ: 'šč',
 	ь: "'",
 	ю: 'ju',
-	я: 'ja'
+	я: 'ja',
+	ы: 'y'
 };
 
 export function transliterate(word: string) {

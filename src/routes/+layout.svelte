@@ -17,15 +17,13 @@
 	});
 </script>
 
-<div class="flex flex-col justify-center items-center min-h-[calc(100vh-8rem)]">
-	<div>
-		<!-- <Navbar>
+<div class="flex flex-col justify-center items-center min-h-[calc(100vh)]">
+	<!-- <Navbar>
 			<NavbarLink text="home" href="/" />
 			<NavbarLink text="projects" href="/projects" />
 		</Navbar> -->
 
-		<slot />
-	</div>
+	<slot />
 </div>
 
 <style>

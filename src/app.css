@@ -3,21 +3,12 @@
 @tailwind utilities;
 
 :root {
-	--main-bg-color: #1e1e2e;
-	--secondary-bg-color: #181825;
-	--main-outline-color: #cba6f7;
-
-	--text-color: #cdd6f4;
-	--subtext-color: #a6adc8;
-
-	font-family: 'Jetbrains Mono', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji';
+	font-family: 'Ubuntu', sans-serif;
 	font-size: smaller;
 }
 
 body {
-	@apply bg-gradient-to-br;
-	@apply from-ctp-mantle;
-	@apply to-ctp-crust;
+	background-image: url('./static/background.png');
 
 	background-repeat: no-repeat;
 	background-attachment: fixed;
