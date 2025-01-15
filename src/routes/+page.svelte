@@ -4,6 +4,9 @@
 	import Icon from './Icon.svelte';
 	import Links from './Links.svelte';
 
+	import Navbar from './Navbar.svelte';
+	import NavbarLink from './NavbarLink.svelte';
+
 	import { onMount } from 'svelte';
 	import { transliterate } from '$lib/cyrlat';
 
@@ -77,30 +80,32 @@
 	});
 </script>
 
+<Navbar>
+	<NavbarLink text="home" href="/" />
+	<NavbarLink text="blog" href="/blog" />
+</Navbar>
+
 <svelte:component this={Module}>
-	<div class="flex">
-		<div>
-			<!-- opacity because the default discord logo is too white -->
-			<img
-				class="h-20 rounded-xl transition-all hover:h-28 {firstFetchComplete === true
-					? 'opacity-100'
-					: 'opacity-80'}"
-				src={discordPicture}
-				alt="user's profile"
-			/>
-		</div>
+	<div class="flex flex-row">
+		<img
+			class="w-20 h-20 rounded-xl transition-all hover:h-28 hover:w-28 {firstFetchComplete === true
+				? 'opacity-100'
+				: 'opacity-80'}"
+			src={discordPicture}
+			alt="user's profile"
+		/>
+
 		<div class="flex flex-col pl-4">
-			<div class="flex flex-row">
-				<p class="text-neutral-300 text-lg font-semibold group" id="username">
-					logix<span class="text-neutral-400 text-lg opacity-0 group-hover:opacity-100 transition"
-						>ism / logixlol
-					</span>
-				</p>
-			</div>
+			<p class="text-neutral-300 text-lg font-semibold group" id="username">
+				logix<span
+					class="hidden sm:inline text-neutral-400 text-lg opacity-0 group-hover:opacity-100 transition"
+					>ism / logixlol
+				</span>
+			</p>
 			<div class="flex flex-row pt-0.5">
-				<p class="text-neutral-400 transitio">
+				<p class="text-neutral-400 transition-all">
 					{activity_type_string}
-					<span class="text-neutral-300/90">
+					<span class="text-neutral-300/90 text-wrap">
 						{transliterate(activity_string.toLowerCase())}
 					</span>
 				</p>
@@ -113,8 +118,11 @@
 		<h2 class="text-xl text-neutral-300 font-semibold">about</h2>
 		<div>
 			<p class="text-base text-neutral-400 tracking-[0.010em] max-w-[34rem]">
-				hi, i'm logix! i'm {calculateAge()} years old.<br />i press funny-looking buttons on the
-				computer every day, and sometimes that results in something interesting
+				hi, i'm logix! i'm <span class="text-blue-200">
+					{calculateAge()}
+				</span>
+				years old.<br />i press funny-looking buttons on the computer every day, and sometimes that
+				results in something interesting
 			</p>
 		</div>
 	</div>

@@ -8,16 +8,14 @@ export default {
 				'small-bounce': 'small-bounce 1s infinite'
 			},
 			keyframes: {
-				'small-bounce': {
-					'0%, 100%': {
-						transform: 'translateY(-5%)',
-						'animation-timing-function': 'cubic-bezier(0.8,0,1,1)'
-					},
-					'50%': {
-						transform: 'none',
-						'animation-timing-function': 'cubic-bezier(0,0,0.2,1)'
+				'border-spin': {
+					'100%': {
+						transform: 'rotate(-360deg)'
 					}
 				}
+			},
+			animation: {
+				'border-spin': 'border-spin 7s linear infinite'
 			}
 		}
 	},

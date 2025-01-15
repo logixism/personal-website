@@ -17,3 +17,30 @@ body {
 html {
 	height: 100vh;
 }
+
+*::-webkit-scrollbar {
+	display: none;
+}
+
+@property --angle {
+	syntax: '<angle>';
+	inherits: true;
+	initial-value: 0turn;
+}
+
+@keyframes spin {
+	to {
+		--angle: 1turn;
+	}
+}
+
+@layer utilities {
+	.bordered {
+		background-clip: padding-box, border-box;
+		background-origin: border-box;
+		border: 2px solid transparent;
+		animation: spin 3s linear infinite;
+		background-image: linear-gradient(#0c0f0d, #0c0f0d),
+			linear-gradient(var(--angle), rgb(255, 0, 76, 0), rgb(255, 0, 76, 1));
+	}
+}

@@ -26,11 +26,11 @@
 </script>
 
 <a
-	class="w-fit h-full p-2 bg-ctp-base outline outline-2 rounded-lg hover:opacity-80 transition {selected ===
+	class="w-fit h-full p-2 px-4 bg-neutral-900/20 outline outline-1 rounded-md hover:opacity-80 transition {selected ===
 	true
-		? 'outline-ctp-pink cursor-default'
-		: 'outline-ctp-mauve'}"
+		? 'outline-neutral-200 cursor-default'
+		: 'outline-neutral-400'}"
 	{href}
 >
-	<p class="text-ctp-text font-semibold">{text}</p>
+	<p class="text-neutral-300 font-semibold">{text}</p>
 </a>
