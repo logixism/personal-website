@@ -34,7 +34,7 @@
 	}
 
 	const activities = {
-		Jellyfin: {
+		Feishin: {
 			text: 'listening to',
 			use: 'details,state'
 		},
@@ -64,7 +64,8 @@
 			activity_type_string = activity_prefix.text;
 			activity_string = `${current_activity[activity_prefix.use.split(',')[0]]} ${current_activity[activity_prefix.use.split(',')[1]] || ''}`;
 		} else {
-			activity_string = `playing ${current_activity.name}`;
+			activity_type_string = 'playing';
+			activity_string = `${current_activity.name}`;
 		}
 
 		firstFetchComplete = true;
@@ -80,10 +81,10 @@
 	});
 </script>
 
-<Navbar>
+<!-- <Navbar>
 	<NavbarLink text="home" href="/" />
 	<NavbarLink text="blog" href="/blog" />
-</Navbar>
+</Navbar> -->
 
 <svelte:component this={Module}>
 	<div class="flex flex-row">
