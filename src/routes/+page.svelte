@@ -34,7 +34,7 @@
 	}
 
 	const activities = {
-		Feishin: {
+		Sonixd: {
 			text: 'listening to',
 			use: 'details,state'
 		},
